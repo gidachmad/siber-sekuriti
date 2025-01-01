@@ -88,8 +88,14 @@
         $name = $_POST['name'];
         $age = $_POST['age'];
         $grade = $_POST['grade'];
-        addStudent($name, $age, $grade);
+        if (filter_var($age, FILTER_VALIDATE_INT) === false || $age <= 0) {
+            echo "Usia harus berupa angka yang valid dan lebih besar dari 0.";
+        } else {
+            // Jika valid, lanjutkan untuk menambahkan siswa
+            addStudent($name, (int) $age, $grade);
+        }        
     }
+    
 
     // PHP untuk menghapus siswa berdasarkan ID
     if (isset($_GET['delete'])) {
