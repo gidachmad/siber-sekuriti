@@ -35,17 +35,16 @@
         <section class="form-section">
             <h2>Form Update Siswa</h2>
             <form method="POST" action="">
-                <!-- tambahkan htmlspecialchars untuk menghindari XSS -->
-                <input type="hidden" id="id" name="id" value="<?php echo htmlspecialchars($student[0]['id'], ENT_QUOTES, 'UTF-8'); ?>" required>
+                <input type="hidden" id="id" name="id" value="<?php echo $students[0]['id']; ?>" required>
 
                 <label for="name">Nama:</label>
-                <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($students[0]['name'], ENT_QUOTES, 'UTF-8'); ?>" required>
+                <input type="text" id="name" name="name" value="<?php echo $students[0]['name']; ?>" required>
 
                 <label for="age">Usia:</label>
-                <input type="number" id="age" name="age" value="<?php echo htmlspecialchars($students[0]['age'], ENT_QUOTES, 'UTF-8'); ?>" required>
+                <input type="number" id="age" name="age" value="<?php echo $students[0]['age']; ?>" required>
 
                 <label for="grade">Nilai:</label>
-                <input type="text" id="grade" name="grade" value="<?php echo htmlspecialchars($students[0]['grade'], ENT_QUOTES, 'UTF-8'); ?>" required>
+                <input type="text" id="grade" name="grade" value="<?php echo $students[0]['grade']; ?>" required>
 
                 <button type="submit">Update Siswa</button>
             </form>
