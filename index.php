@@ -60,16 +60,18 @@
                         // $students = selectStudents();
                         if ($students) {
                             foreach ($students as $student) {
+                                // tambahkan htmlspecialchars untuk menghindari XSS
                                 echo "<tr>
-                                    <td>" . $student['id'] . "</td>
-                                    <td>" . $student['name'] . "</td>
-                                    <td>" . $student['age'] . "</td>
-                                    <td>" . $student['grade'] . "</td>
+                                    <td>" . htmlspecialchars($student['id'], ENT_QUOTES, 'UTF-8') . "</td>
+                                    <td>" . htmlspecialchars($student['name'], ENT_QUOTES, 'UTF-8') . "</td>
+                                    <td>" . htmlspecialchars($student['age'], ENT_QUOTES, 'UTF-8') . "</td>
+                                    <td>" . htmlspecialchars($student['grade'], ENT_QUOTES, 'UTF-8') . "</td>
                                     <td>
                                         <a href='edit.php?id=" . $student['id'] . "' class='btn btn-update'>Edit</a>
                                         <a href='delete.php?id=" . $student['id'] . "' class='btn btn-delete' onclick='return confirm(\"Yakin ingin menghapus?\")'>Hapus</a>
                                     </td>
                                 </tr>";
+                                // tambahkan htmlspecialchars untuk menghindari XSS
                             }
                         }
                     ?>
