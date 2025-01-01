@@ -96,6 +96,9 @@ function addStudent($name, $age, $grade) {
     if ($db) {
         // Kode ini rentan terhadap SQL Injection karena tidak ada sanitasi input
 
+        // var_dump($name, $age, $grade);
+        // die;
+
         // Menyusun query untuk menambahkan data siswa tanpa sanitasi input
         $query = "INSERT INTO student (name, age, grade) VALUES ('$name', '$age', '$grade')";
         //$query = "DELETE from student where age != 999999";
