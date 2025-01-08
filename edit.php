@@ -36,7 +36,7 @@
             <h2>Form Update Siswa</h2>
             <form method="POST" action="">
                 <!-- tambahkan htmlspecialchars untuk menghindari XSS -->
-                <input type="hidden" id="id" name="id" value="<?php echo htmlspecialchars($student[0]['id'], ENT_QUOTES, 'UTF-8'); ?>" required>
+                <input type="hidden" id="id" name="id" value="<?php echo htmlspecialchars($students[0]['id'], ENT_QUOTES, 'UTF-8'); ?>" required>
 
                 <label for="name">Nama:</label>
                 <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($students[0]['name'], ENT_QUOTES, 'UTF-8'); ?>" required>
