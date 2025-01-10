@@ -74,6 +74,16 @@ header p {
     font-size: 16px;
 }
 
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
 .form-section button:hover {
     background-color: #45a049;
 }
@@ -102,6 +112,14 @@ header p {
     background-color: #f9f9f9;
 }
 
+.btn {
+    padding: 8px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
 .students-list .btn {
     padding: 8px 15px;
     color: white;
@@ -120,6 +138,14 @@ header p {
 
 .students-list .btn-delete {
     background-color: #f44336;
+}
+
+.btn-delete {
+    background-color: #f44336;
+}
+
+.btn-delete:hover {
+    background-color: #e53935;
 }
 
 .students-list .btn-delete:hover {

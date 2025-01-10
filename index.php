@@ -1,9 +1,13 @@
 <?php
+include 'session_manager.php';
+if(!isset($_SESSION['username'])) {
+    header("Location: login.php");
+}
+
 // Koneksi dan fungsi lainnya tetap sama seperti yang Anda kirimkan
 // Fungsi untuk membuka koneksi ke database SQLite3, select, update, delete, dan add
 // function connectDB() {
     // Membuka koneksi ke database SQLite
-    include 'app.php';
     $students=selectStudents();
     
 // }
@@ -23,6 +27,10 @@
             <h1>Manajemen Siswa</h1>
             <p>Tambah, Update, Hapus dan Lihat Daftar Siswa</p>
         </header>
+
+        <form method="POST" action="index.php">
+            <button class='btn btn-delete' type="submit" name="logout">Logout</button>
+        </form>
 
         <!-- Form untuk menambahkan siswa -->
         <section class="form-section">
@@ -103,6 +111,10 @@
     if (isset($_GET['delete'])) {
         $id = $_GET['delete'];
         deleteStudent($id);
+    }
+
+    if (isset($_POST['logout'])) {
+        logout();
     }
     ?>
 </body>
