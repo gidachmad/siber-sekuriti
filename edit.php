@@ -1,5 +1,8 @@
 <?php
-    include 'app.php'; 
+    include 'session_manager.php';
+    if(!isset($_SESSION['username'])) {
+        header("Location: login.php");
+    }
 
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
